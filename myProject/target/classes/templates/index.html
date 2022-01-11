@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>General Info</title>
+    <th:block th:include="~{fragments/navigation}"/>
+</head>
+
+<body>
+<div style="padding:0 16px; display: flex; flex-direction: column; align-items: center;">
+    <h2>Hi, here is your General Information card</h2>
+    <h2></h2>
+    <!--        <p>This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>-->
+    <!--        <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>-->
+    <!--        <h4>Resize the browser window to see the effect.</h4>-->
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="card" style="padding:0 16px; display: flex; flex-direction: column; align-items: center;">
+        <img style="width: 200px" src="https://www.pinpng.com/pngs/m/302-3025490_empty-profile-picture-profile-anonymous-hd-png-download.png">
+        <h1>Atanas Georgiev Iliev</h1>
+        <p class="title">Java Software Developer</p>
+        <p>Technical University of Sofia</p>
+        <div>
+            <a><i>Find me in:    </i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+        <!--            <p><button>Contact</button></p>-->
+    </div>
+</div>
+</body>
+<th:block th:include="~{fragments/footer}"/>
+
+</html>

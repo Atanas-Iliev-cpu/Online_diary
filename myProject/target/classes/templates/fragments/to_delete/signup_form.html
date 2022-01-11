@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<div class="container text-center" style="display: flex;flex-direction: column;align-items: center;}">
+    <div>
+        <h1>Registration Form</h1>
+    </div>
+
+    <form th:action="@{/register}" method="post" style="max-width: 600px; margin: 0 auto">
+
+        <div class="m-3">
+
+            <div class="form-group-row">
+                <lebel class="col-form-label col-4">Username</lebel>
+                <div class="col-8">
+                    <input type="usrname" class="form-control" name="username" required>
+                </div>
+            </div>
+
+            <div class="form-group-row">
+                <lebel class="col-form-label col-4">Password</lebel>
+                <div class="col-8">
+                    <input type="password" class="form-control" name="password" required>
+                </div>
+
+                <lebel class="col-form-label col-4">Confirm Password</lebel>
+                <div class="col-8">
+                    <input type="password" class="form-control" name="confirmPassword" required>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

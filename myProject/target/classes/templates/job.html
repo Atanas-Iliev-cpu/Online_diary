@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Education</title>
+    <th:block th:include="~{fragments/navigation}"/>
+</head>
+<br>
+
+<!--<form>-->
+<!--    <div class="form-group">-->
+<!--        <label for="inputAddress2">School Name</label>-->
+<!--        <input type="text" class="form-control" id="inputAddress1" placeholder="Apartment, studio, or floor">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label for="inputAddress2">Education level</label>-->
+<!--        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">-->
+<!--    </div>-->
+<!--    <div class="form-row">-->
+<!--        <div class="form-group col-md-6">-->
+<!--            <label for="inputEmail4">Start Date</label>-->
+<!--            <input type="text" class="form-control" id="inputEmail4" placeholder="Email">-->
+<!--        </div>-->
+<!--        <div class="form-group col-md-6">-->
+<!--            <label for="inputPassword4">End Date</label>-->
+<!--            <input type="text" class="form-control" id="inputPassword4" placeholder="Password">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-row">-->
+<!--        <div class="form-group col-md-6">-->
+<!--            <label for="inputCity">Country</label>-->
+<!--            <input type="text" class="form-control" id="inputCountry">-->
+<!--        </div>-->
+<!--        <div class="form-group col-md-6">-->
+<!--            <label for="inputCity">City</label>-->
+<!--            <input type="text" class="form-control" id="inputCity">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div style="display: flex;-->
+<!--    flex-direction: column;-->
+<!--    align-items: center;">-->
+<!--    <button type="submit" class="btn btn-primary">Sign in</button>-->
+<!--    </div>-->
+<!--</form>-->
+
+<body>
+<div class="card text-center" th:each="job,iStat: ${jobs}">
+    <div style="font-weight: bolder" class="card-header" th:text="${job.getWorkPlace()}">
+        Technical University of Sofia
+    </div>
+    <div class="card-body">
+        <!--        <a>Degree </a>-->
+        <div>
+            <h6 >Degree: </h6>
+            <h5 style="font-weight: bolder" class="card-title" th:text="${job.getPosition()}">Bachlor degree</h5>
+        </div>
+        <h6 >Start on: </h6>
+        <h5 style="font-weight: bolder" class="card-title"th:text="${job.getStartDate()}">from</h5>
+        <h6>End on: </h6>
+        <h5 style="font-weight: bolder" class="card-title"th:text="${job.getEndDate()}">to</h5>
+        <h6>City: </h6>
+        <h5 style="font-weight: bolder" class="card-title" th:text="${job.getCity()}">City</h5>
+        <h6>Country: </h6>
+        <h5 style="font-weight: bolder" class="card-title" th:text="${job.getCountry()}">Country</h5>
+
+        <form method="post" th:action="@{/job_delete/{id}(id=${job.id})}">
+            <button class="btn btn-primary">Delete card</button>
+        </form>
+    </div>
+    <div class="card-footer text-muted">
+        <!--                2 days ago-->
+    </div>
+</div>
+<br>
+<br>
+<br>
+</body>
+<footer>
+    <th:block th:include="~{fragments/footer}"/>
+</footer>
+
+</html>
